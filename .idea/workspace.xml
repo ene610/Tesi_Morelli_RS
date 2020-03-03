@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65d13e7c-da20-4d77-9795-c74074c75795" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Yd6Svny5F2wFmdIdIu1sCkRgBP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tesi" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65d13e7c-da20-4d77-9795-c74074c75795" name="Default Changelist" comment="" />
+      <created>1583260127765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583260127765</updated>
+      <workItem from="1583260132457" duration="1216000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="279" y="156" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583261696329">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="279" y="156" width="424" height="484" key="FileChooserDialogImpl/0.0.1366.737@0.0.1366.737" timestamp="1583261696329" />
+    <state x="172" y="3" key="SettingsEditor" timestamp="1583261708427">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="172" y="3" key="SettingsEditor/0.0.1366.737@0.0.1366.737" timestamp="1583261708427" />
+  </component>
+</project>
