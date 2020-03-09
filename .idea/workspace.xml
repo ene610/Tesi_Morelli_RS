@@ -69,6 +69,7 @@
       <updated>1583260127765</updated>
       <workItem from="1583260132457" duration="6302000" />
       <workItem from="1583278878655" duration="517000" />
+      <workItem from="1583687981083" duration="8262000" />
     </task>
     <servers />
   </component>
@@ -80,22 +81,26 @@
       <screen x="0" y="0" width="1366" height="737" />
     </state>
     <state x="279" y="156" width="424" height="484" key="FileChooserDialogImpl/0.0.1366.737@0.0.1366.737" timestamp="1583261696329" />
-    <state width="1324" height="213" key="GridCell.Tab.0.bottom" timestamp="1583527283575">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state width="1324" height="135" key="GridCell.Tab.0.bottom" timestamp="1583703904275">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state width="1324" height="213" key="GridCell.Tab.0.bottom/0.0.1366.737@0.0.1366.737" timestamp="1583527283575" />
-    <state width="1324" height="213" key="GridCell.Tab.0.center" timestamp="1583527283574">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state width="1324" height="135" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1583703904275" />
+    <state width="1324" height="135" key="GridCell.Tab.0.center" timestamp="1583703904275">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state width="1324" height="213" key="GridCell.Tab.0.center/0.0.1366.737@0.0.1366.737" timestamp="1583527283574" />
-    <state width="1324" height="213" key="GridCell.Tab.0.left" timestamp="1583527283574">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state width="1324" height="135" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1583703904275" />
+    <state width="1324" height="135" key="GridCell.Tab.0.left" timestamp="1583703904274">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state width="1324" height="213" key="GridCell.Tab.0.left/0.0.1366.737@0.0.1366.737" timestamp="1583527283574" />
-    <state width="1324" height="213" key="GridCell.Tab.0.right" timestamp="1583527283574">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state width="1324" height="135" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1583703904274" />
+    <state width="1324" height="135" key="GridCell.Tab.0.right" timestamp="1583703904275">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state width="1324" height="213" key="GridCell.Tab.0.right/0.0.1366.737@0.0.1366.737" timestamp="1583527283574" />
+    <state width="1324" height="135" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1583703904275" />
     <state width="1324" height="218" key="GridCell.Tab.1.bottom" timestamp="1583522813401">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
@@ -116,24 +121,14 @@
       <screen x="0" y="0" width="1366" height="737" />
     </state>
     <state x="172" y="3" key="SettingsEditor/0.0.1366.737@0.0.1366.737" timestamp="1583261756039" />
-    <state x="349" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1583584176221">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state x="349" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1583689614233">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="349" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.737@0.0.1366.737" timestamp="1583584176221" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/extractDataBooks.py</url>
-          <line>127</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="349" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.740@0.0.1366.740" timestamp="1583689614233" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Tesi_Morelli_RS$extractDataBooks.coverage" NAME="extractDataBooks Coverage Results" MODIFIED="1583527283564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tesi_Morelli_RS$extractDataBooks.coverage" NAME="extractDataBooks Coverage Results" MODIFIED="1583703904257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Tesi_Morelli_RS$TripAdvisorScraper.coverage" NAME="TripAdvisorScraper Coverage Results" MODIFIED="1583490344735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

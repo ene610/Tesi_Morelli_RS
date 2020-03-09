@@ -23,17 +23,17 @@ if __name__ == '__main__':
     #Trasforma da csv a pandas
 
     df_book_tags = pd.read_csv("/home/ene/PycharmProjects/Tesi/book_tags.csv")
-    #df_books = pd.read_csv("/home/ene/PycharmProjects/Tesi/books.csv")
-    #df_ratings = pd.read_csv("/home/ene/PycharmProjects/Tesi/ratings.csv")
+    df_books = pd.read_csv("/home/ene/PycharmProjects/Tesi/books.csv")
+    df_ratings = pd.read_csv("/home/ene/PycharmProjects/Tesi/ratings.csv")
     df_tags = pd.read_csv("/home/ene/PycharmProjects/Tesi/tags.csv")
-    #df_toRead = pd.read_csv("/home/ene/PycharmProjects/Tesi/to_read.csv")
+    df_toRead = pd.read_csv("/home/ene/PycharmProjects/Tesi/to_read.csv")
 
     #sistema campi che danno errori
-#    df_books.language_code = df_books.language_code.astype(str)
-#    df_books.original_title = df_books.original_title.astype(str)
-#    df_books.isbn = df_books.isbn.astype(str)
-#    df_books.isbn13 = df_books.isbn13.astype(float)
-#    df_books.isbn13 = df_books.isbn13.astype(str)
+    df_books.language_code = df_books.language_code.astype(str)
+    df_books.original_title = df_books.original_title.astype(str)
+    df_books.isbn = df_books.isbn.astype(str)
+    df_books.isbn13 = df_books.isbn13.astype(float)
+    df_books.isbn13 = df_books.isbn13.astype(str)
 
     # crea una spark session
     spark = SparkSession.builder.getOrCreate()
@@ -41,8 +41,8 @@ if __name__ == '__main__':
     # converte da pandas a i spark dataframe
 
     spark_df_book_tags = spark.createDataFrame(df_book_tags)
-    #spark_df_books = spark.createDataFrame(df_books)
-    #spark_df_ratings = spark.createDataFrame(df_ratings)
+    spark_df_books = spark.createDataFrame(df_books)
+    spark_df_ratings = spark.createDataFrame(df_ratings)
     spark_df_tags = spark.createDataFrame(df_tags)
     #spark_df_toRead = spark.createDataFrame(df_toRead)
 
@@ -69,24 +69,32 @@ if __name__ == '__main__':
         #pandas_tags_per_books_with_name = top_n_tags_per_books_with_name.select("tag_name").groupBy("tag_name").count()
         #for row in pandas_tags_per_books_with_name.sort("count",ascending=False).collect():
         #    print(row)
-    def printone(x):
-        print(x)
-        print("\n")
 
     def users2ratings():
-        spark_df_ratings\
-            .rdd.map(lambda row : (row["user_id"],[[row["book_id"],row["rating"]]]))\
+        usersRatings = spark_df_ratings\
+            .rdd.map(lambda row : (row["user_id"],[{"id_goodreadBook":row["book_id"] ,"vote":row["rating"]}]))\
             .reduceByKey(lambda row1,row2 : row1+row2)\
-            .foreach(printone)
+            .collect()
+            #esempio riga (id_utente : 22347, [{'id_goodreadBook': 1, 'vote': 5} , .... ]}
+        for row in usersRatings:
+            #print(row) per visualizzare
+            new_row = {"id_utente" : row[0], "ratings":row[1]}
+            column = db.usersRatings
+            column.insert_one(new_row)
+
 
 
     def books2ratings():
-        spark_df_ratings \
-            .rdd.map(lambda row: (row["book_id"], [{"user_id" : row["user_id"],"rating" : row["rating"]}])) \
+        booksRatings = spark_df_ratings \
+            .rdd.map(lambda row: (row["book_id"], [{"id_user":row["user_id"] ,"vote":row["rating"]}])) \
             .reduceByKey(lambda row1, row2: row1 + row2) \
-            .foreach(printone)
-
-
+            .collect()
+        #esempio di riga : (bookID:8311, [{'id_user': 16131, 'vote': 5}, .... ]}
+        for row in booksRatings:
+            #print(row) per visualizzare
+            new_row = {"goodreads_book_id" : row[0], "ratings":row[1]}
+            column = db.booksRatings
+            column.insert_one(new_row)
 
     def books2tags():
         # esempio (20405, ((2570856, 33), 'monsters'))
@@ -119,21 +127,14 @@ if __name__ == '__main__':
             .collect()
         for row in gamma :
             new_row = {"gr_id": row[0], "data": row[1]}
-            print(row[0])
-            print(new_row)
-            print(type(new_row))
-            new_row = {"gr_id": row[0], "data": row[1]}
             column = db.BooksTags
             column.insert_one(new_row)
         print("alfa")
 
         #.map()
             #.reduceByKey(lambda row1,row2 : row1 + row2)\
-
-
-
-    #user2ratings()
-    #books2ratings()
-    books2tags()
+    users2ratings()
+    books2ratings()
+    #books2tags()
     #topNTags4Books2MongoDB()
     spark.stop()
