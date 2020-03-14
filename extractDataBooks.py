@@ -2,7 +2,7 @@ import pandas as pd
 from pyspark.sql import SparkSession
 from pymongo import MongoClient
 from pyspark.sql.window import Window
-from pyspark.sql.functions import rank, col
+#from pyspark.sql.functions import rank, col
 
 genres = "Art", "Biography", "Business", "Chick Lit",\
          "Children's", "Christian", "Classics",\
@@ -22,11 +22,11 @@ if __name__ == '__main__':
 
     #Trasforma da csv a pandas
 
-    df_book_tags = pd.read_csv("/home/ene/PycharmProjects/Tesi/book_tags.csv")
-    df_books = pd.read_csv("/home/ene/PycharmProjects/Tesi/books.csv")
-    df_ratings = pd.read_csv("/home/ene/PycharmProjects/Tesi/ratings.csv")
-    df_tags = pd.read_csv("/home/ene/PycharmProjects/Tesi/tags.csv")
-    df_toRead = pd.read_csv("/home/ene/PycharmProjects/Tesi/to_read.csv")
+    df_book_tags = pd.read_csv("/home/ene/TesiCarlo/Tesi_Morelli_RS/book_tags.csv")
+    df_books = pd.read_csv("/home/ene/TesiCarlo/Tesi_Morelli_RS/books.csv")
+    df_ratings = pd.read_csv("/home/ene/TesiCarlo/Tesi_Morelli_RS/ratings.csv")
+    df_tags = pd.read_csv("/home/ene/TesiCarlo/Tesi_Morelli_RS/tags.csv")
+    df_toRead = pd.read_csv("/home/ene/TesiCarlo/Tesi_Morelli_RS/to_read.csv")
 
     #sistema campi che danno errori
     df_books.language_code = df_books.language_code.astype(str)
@@ -44,15 +44,15 @@ if __name__ == '__main__':
     spark_df_books = spark.createDataFrame(df_books)
     spark_df_ratings = spark.createDataFrame(df_ratings)
     spark_df_tags = spark.createDataFrame(df_tags)
-    #spark_df_toRead = spark.createDataFrame(df_toRead)
+    spark_df_toRead = spark.createDataFrame(df_toRead)
 
     # Add the spark data frame to the catalog
 
-    #spark_df_book_tags.createOrReplaceTempView('book_tags')
-    #spark_df_books.createOrReplaceTempView('books')
-    #spark_df_ratings.createOrReplaceTempView('ratings')
-    #spark_df_tags.createOrReplaceTempView('tags')
-    #spark_df_toRead.createOrReplaceTempView('to_read')
+    spark_df_book_tags.createOrReplaceTempView('book_tags')
+    spark_df_books.createOrReplaceTempView('books')
+    spark_df_ratings.createOrReplaceTempView('ratings')
+    spark_df_tags.createOrReplaceTempView('tags')
+    spark_df_toRead.createOrReplaceTempView('to_read')
 
     def topNTags4Books2MongoDB():
         from pyspark.sql.functions import rank, col
@@ -135,6 +135,6 @@ if __name__ == '__main__':
             #.reduceByKey(lambda row1,row2 : row1 + row2)\
     users2ratings()
     books2ratings()
-    #books2tags()
+    books2tags()
     #topNTags4Books2MongoDB()
     spark.stop()
